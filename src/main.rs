@@ -1,6 +1,7 @@
 use std::env;
 mod kairn;
 
+
 fn main() {
   let args: Vec<String> = env::args().collect();
   match args.len() {
@@ -8,7 +9,7 @@ fn main() {
       kairn::home();
     },
     _ => {
-      kairn::help();
+      kairn::handle_command(&args[1..]);
     }
   }
 }
